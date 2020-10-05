@@ -105,7 +105,19 @@ eval("/* Mapbox GL JS is licensed under the 3-Clause BSD License. Full text of l
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_0__);\n//console.log('Hello from JavaScript')\n\n\n\nmapbox_gl__WEBPACK_IMPORTED_MODULE_0___default.a.accessToken = \"pk.eyJ1IjoiYWxmcmVkZm1lbmciLCJhIjoiY2tmd3A0YWFhMWlhcDJ6czN6Yzl3N2dheCJ9.ChwqYN2fB6bg1_ACOKWICw\";\n\nconst map = new mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default.a.Map({\n  container: \"map\",\n  center: [-74.009, 40.705], // FullStack NY coordinates; alternatively, use [-87.6354, 41.8885] for Chicago\n  zoom: 12, // starting zoom\n  style: \"mapbox://styles/mapbox/streets-v10\" // mapbox has lots of different map styles available.\n});\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n/* harmony import */ var mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _marker_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./marker.js */ \"./src/marker.js\");\n//console.log('Hello from JavaScript')\n\n\n\n\nmapbox_gl__WEBPACK_IMPORTED_MODULE_0___default.a.accessToken = \"pk.eyJ1IjoiYWxmcmVkZm1lbmciLCJhIjoiY2tmd3A0YWFhMWlhcDJ6czN6Yzl3N2dheCJ9.ChwqYN2fB6bg1_ACOKWICw\";\n\nconst map = new mapbox_gl__WEBPACK_IMPORTED_MODULE_0___default.a.Map({\n  container: \"map\",\n  center: [-74.009, 40.705], // FullStack NY coordinates; alternatively, use [-87.6354, 41.8885] for Chicago\n  zoom: 12, // starting zoom\n  style: \"mapbox://styles/mapbox/streets-v10\" // mapbox has lots of different map styles available.\n});\n\n// const markerDomEl = document.createElement('div');\n// markerDomEl.style.width = \"32px\";\n// markerDomEl.style.height = \"39px\";\n// markerDomEl.style.backgroundImage = \"url(http://i.imgur.com/WbMOfMl.png)\";\n\n// new mapboxgl.Marker(markerDomEl).setLngLat([-74.009, 40.705]).addTo(map)\n\nObject(_marker_js__WEBPACK_IMPORTED_MODULE_1__[\"createMarker\"])('restaurant', [-75.009, 40.705], map)\nObject(_marker_js__WEBPACK_IMPORTED_MODULE_1__[\"createMarker\"])('activity', [-77.009, 40.705], map)\nObject(_marker_js__WEBPACK_IMPORTED_MODULE_1__[\"createMarker\"])('hotel', [-80.009, 40.705], map)\n\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/marker.js":
+/*!***********************!*\
+  !*** ./src/marker.js ***!
+  \***********************/
+/*! exports provided: createMarker */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createMarker\", function() { return createMarker; });\nconst mapboxgl = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n\nfunction createMarker(type, coordinates, map) {\n  const markerDomEl = document.createElement('div');\n  markerDomEl.style.width = \"32px\";\n  markerDomEl.style.height = \"39px\";\n  switch (type) {\n    case 'restaurant':\n      markerDomEl.style.backgroundImage = \"url(https://i.imgur.com/cqR6pUI.png)\";\n    break;\n    case 'activity':\n      markerDomEl.style.backgroundImage = \"url(http://i.imgur.com/WbMOfMl.png)\";\n    break;\n    case 'hotel':\n      markerDomEl.style.backgroundImage = \"url(https://i.imgur.com/D9574Cu.png)\";\n    break;\n  }\n  const newMarker = new mapboxgl.Marker(markerDomEl).setLngLat(coordinates).addTo(map)\n  return newMarker;\n}\n\n\n\n\n//# sourceURL=webpack:///./src/marker.js?");
 
 /***/ })
 

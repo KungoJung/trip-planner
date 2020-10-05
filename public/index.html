@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="./bundle.js" defer></script> 
+    <script src="./bundle.js" defer></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="./style.css"></link>
     <meta charset="UTF-8">
@@ -9,6 +9,39 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="map"></div>
+    <div id="parent">
+        <div id="navbar">
+            <a href="./doesntexist">Home</a>
+            <a href="./doesntexist">About</a>
+            <a href="./doesntexist">Contact</a>
+        </div>
+        <div id="map">
+            <div id="main-ui">
+                <div id="selections">
+                    <div id="hotel-selections">
+                        <h4>Hotels</h4>
+                        <select id="hotel-dropdown" name="hotel-dropdown">
+                            <option value="A">A</option>
+                        </select>
+                    </div>
+                    <div id="restaurant-selections">
+                        <h4>Restaurants</h4>
+                        <select name="restaurant-dropdown" id="restaurant-dropdown">
+                            <option value="B">B</option>
+                        </select>
+                    </div>
+                    <div id="activity-selections">
+                        <h4>Activities</h4>
+                        <select name="activity-dropdown" id="activity-dropdown">
+                            <option value="C">C</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="itinerary">
+                    <h2>Itinerary:</h2>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
